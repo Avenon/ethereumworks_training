@@ -6,7 +6,7 @@
 pragma solidity ^0.4.11;
 
 // Подключаем библиотеку
-import 'https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI.sol';
+import 'https://github.com/oraclize/ethereum-api/oraclizeAPI.sol';
 
 // Объявляем контракт
 // usingOraclize есть в подключенной библиотеке
@@ -20,7 +20,7 @@ contract DollarCost is usingOraclize{
         // Проверяем, что функцию действительно вызывает ораклайзер
         if (msg.sender != oraclize_cbAddress()) throw;
         // Обновляем переменную со стоимостью доллара
-        dollarCost = pasreInt(result, 3);
+        dollarCost = parseInt(result, 3);
     }
     // Функция для обновления курса доллара
     function updatePrice() public payable {
