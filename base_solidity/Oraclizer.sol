@@ -34,7 +34,7 @@ contract DollarCost is usingOraclize{
         }
         else {
           // Если хватает - отправляем запрос в API
-          oraclize_query("URL", "json(https://api.kraken.com/0/public/Ticker?pair=ETHUSD).result.XETHZUSD.c.[0]")
+          oraclize_query("URL", "json(https://api.kraken.com/0/public/Ticker?pair=ETHUSD).result.XETHZUSD.c.[0]");
         }
     }
 }
